@@ -108,6 +108,7 @@ namespace ExamSimulator
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 6;
             this.btnNext.Text = "Next";
+            this.btnNext.Enabled = false;
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             //
@@ -120,12 +121,23 @@ namespace ExamSimulator
             this.lblScore.TabIndex = 7;
             this.lblScore.Text = "Score: 0";
             //
+            // btnPrevious
+            //
+            this.btnPrevious.Location = new System.Drawing.Point(177, 145);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious.TabIndex = 8;
+            this.btnPrevious.Text = "Previous";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            //
             // Form1
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.lblScore);
+            this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.rbtnChoice4);
@@ -150,5 +162,6 @@ namespace ExamSimulator
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Button btnPrevious;
     }
 }

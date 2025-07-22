@@ -138,6 +138,16 @@ namespace ExamSimulator
                 btnNext.Enabled = false;
                 btnSubmit.Enabled = false;
             }
+            btnNext.Enabled = false;
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (currentQuestionIndex > 0)
+            {
+                currentQuestionIndex--;
+                DisplayQuestion();
+            }
         }
 
     }
