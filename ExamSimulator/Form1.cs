@@ -77,11 +77,15 @@ namespace ExamSimulator
                 var currentQuestion = questionsList[currentQuestionIndex];
                 lblQuestion.Text = currentQuestion.QuestionText;
 
+                // Randomize the choices
+                var rnd = new Random();
+                var randomizedChoices = currentQuestion.Choices.OrderBy(c => rnd.Next()).ToList();
+
                 // Display choices without shuffling, ensuring empty choices are handled properly
-                rbtnChoice1.Text = currentQuestion.Choices.ElementAtOrDefault(0) ?? "";
-                rbtnChoice2.Text = currentQuestion.Choices.ElementAtOrDefault(1) ?? "";
-                rbtnChoice3.Text = currentQuestion.Choices.ElementAtOrDefault(2) ?? "";
-                rbtnChoice4.Text = currentQuestion.Choices.ElementAtOrDefault(3) ?? "";
+                rbtnChoice1.Text = randomizedChoices.ElementAtOrDefault(0) ?? "";
+                rbtnChoice2.Text = randomizedChoices.ElementAtOrDefault(1) ?? "";
+                rbtnChoice3.Text = randomizedChoices.ElementAtOrDefault(2) ?? "";
+                rbtnChoice4.Text = randomizedChoices.ElementAtOrDefault(3) ?? "";
 
                 // Ensure radio buttons are cleared before showing a new question
                 rbtnChoice1.Checked = false;
