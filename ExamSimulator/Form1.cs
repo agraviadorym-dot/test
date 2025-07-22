@@ -114,6 +114,7 @@ namespace ExamSimulator
             {
                 MessageBox.Show("Correct!");
                 score++;  // Increment score
+                btnNext.Enabled = true;
             }
             else
             {
