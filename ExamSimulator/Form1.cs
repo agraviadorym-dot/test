@@ -127,7 +127,8 @@ namespace ExamSimulator
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (currentQuestionIndex < questionsList.Count)
+            MessageBox.Show($"Before increment: {currentQuestionIndex}");
+            if (currentQuestionIndex < questionsList.Count -1)
             {
                 currentQuestionIndex++;
                 DisplayQuestion();
@@ -136,6 +137,7 @@ namespace ExamSimulator
             {
                 MessageBox.Show("You've reached the last question!");
             }
+            MessageBox.Show($"After increment: {currentQuestionIndex}");
         }
 
     }
