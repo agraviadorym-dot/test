@@ -27,6 +27,11 @@ namespace ExamSimulator
             {
                 var fileText = File.ReadAllText(filePath);
                 questionsList = ParseQuestions(fileText);
+
+                // Randomize the questions
+                var rnd = new Random();
+                questionsList = questionsList.OrderBy(q => rnd.Next()).ToList();
+
                 DisplayQuestion();  // Display the first question
             }
             catch (FileNotFoundException)
