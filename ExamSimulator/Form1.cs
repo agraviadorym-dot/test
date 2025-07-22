@@ -135,9 +135,16 @@ namespace ExamSimulator
             }
             else
             {
-                MessageBox.Show("You've reached the end of the quiz!");
-                btnNext.Enabled = false;
-                btnSubmit.Enabled = false;
+                DialogResult result = MessageBox.Show("You've reached the end of the quiz! Do you want to restart?", "Quiz Over", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    ResetQuiz();
+                }
+                else
+                {
+                    btnNext.Enabled = false;
+                    btnSubmit.Enabled = false;
+                }
             }
             btnNext.Enabled = false;
         }
@@ -149,6 +156,16 @@ namespace ExamSimulator
                 currentQuestionIndex--;
                 DisplayQuestion();
             }
+        }
+
+        private void ResetQuiz()
+        {
+            currentQuestionIndex = 0;
+            score = 0;
+            DisplayQuestion();
+            lblScore.Text = "Score: 0";
+            btnNext.Enabled = false;
+            btnSubmit.Enabled = true;
         }
 
     }
