@@ -127,17 +127,17 @@ namespace ExamSimulator
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Before increment: {currentQuestionIndex}");
-            if (currentQuestionIndex < questionsList.Count -1)
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questionsList.Count)
             {
-                currentQuestionIndex++;
                 DisplayQuestion();
             }
             else
             {
-                MessageBox.Show("You've reached the last question!");
+                MessageBox.Show("You've reached the end of the quiz!");
+                btnNext.Enabled = false;
+                btnSubmit.Enabled = false;
             }
-            MessageBox.Show($"After increment: {currentQuestionIndex}");
         }
 
     }
